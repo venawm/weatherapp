@@ -12,12 +12,15 @@ const CityAction = (cityName) => async(dispatch)=> {
     const weatherDetails = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`)
     const temperature =  weatherDetails.data.main
     const weather = weatherDetails.data.weather[0]
+    const name = weatherDetails.data.name
+    console.log(weatherDetails)
     
     dispatch({
         type: "FETCH_WEATHER",
         payload:{
             Weather :temperature,
-            weatherCondition : weather
+            weatherCondition : weather,
+            Name : name
 
         }
     })

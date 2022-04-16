@@ -1,14 +1,22 @@
 import React from "react";
+import styled from 'styled-components'
 import Home from "./Components/home/home";
 function App() {
   return (
-    <div className="App">
+    <Main>
       <h1>Weather App</h1>
       <Home />
 
 
-    </div>
+      </Main>
   );
 }
 
+const Main = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+`
 export default App;
